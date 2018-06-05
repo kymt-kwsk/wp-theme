@@ -1,0 +1,184 @@
+//== Drawer 
+
+/*	Drawer	*/
+/*-------------------------*/
+$drawer_width: 220px;
+
+#wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+	@include transition(all 0.5s ease);
+	z-index: 2;
+	overflow: hidden;
+}
+
+#drawer {
+	position: fixed;
+	top: 0;
+	right: -$drawer_width;
+	@include size( $drawer_width ,100%);
+	padding-top: 70px;
+	text-align: left;
+	font-size: 13px;
+	letter-spacing: 1px;
+	z-index: 5;
+	@include transition(all 0.5s ease);
+	overflow: auto;
+
+	&.side-visible {
+		right: 0px;
+	}
+}
+
+.overlay {
+	content: '';
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	-webkit-transition: all .5s ease;
+	transition: all .5s ease;
+	z-index: 3;
+}
+.pc-disp {
+
+	#drawer,#drawer__toggle,.overlay {
+		display: none;
+	}
+}
+
+body.side-open:not(.pc-disp) {
+	overflow: hidden;
+
+	#wrapper,
+	.overlay {
+		-webkit-transform: translate3d( -$drawer_width, 0, 0);
+		transform: translate3d( -$drawer_width, 0, 0);
+	}
+	
+	.overlay {
+		visibility: visible;
+		cursor: pointer;
+		background: rgba(0,0,0,.2);
+
+		&:after {
+			visibility: visible;
+			color: rgba(255,255,255,.8);
+		}
+	}
+
+//	#header {	display:none;	}
+
+}
+
+/* ellipsis btn */
+.drawer__btn {
+	position: fixed;
+	top: 0;
+	right: 0px;
+	width: 60px;
+	height: 60px;
+	padding: 0;
+	z-index: 10;
+//	background: $white;
+//	background: rgba(255,255,255,.9);
+	background: $primary_color;
+}
+
+.ellipsis {
+	position: relative;
+	display: block;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+
+	[class^="ellipsis__point"],
+	[class*="ellipsis__point"] {
+		position: absolute;
+		left: 0;
+		right: 0;
+		display: block;
+		width: 24px;
+		height: 3px;
+		margin: auto;
+		background: $white;
+		-webkit-transition: all .3s;
+		transition: all .3s;
+	}//.ellipsis__point
+	
+	.ellipsis__point {
+		&_top {
+			top: 12px;
+		}
+		&_mid {
+			top: 20px;
+		}
+		&_bot {
+			top: 28px;
+		}
+	}//.ellipsis__point
+
+	.txt {
+		display: block;
+		width: 100%;
+		position: absolute;
+		bottom: 10px;
+		font-size: 11px;
+		line-height: 1 !important;
+		color: $white;
+		text-align: center;
+		letter-spacing: 1px;
+	}
+
+}//.ellipsis
+
+.side-open {
+
+	[class^="ellipsis__point"],
+	[class*="ellipsis__point"] {
+		left: 8px;
+		width: 24px;
+		height: 3px;
+		background: $white;
+	}
+	
+	.ellipsis__point {
+		&_top {
+			-webkit-transform-origin: left top;
+			-ms-transform-origin: left top;
+			transform-origin: left top;
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+
+		&_mid {
+			opacity: 0;
+		}
+
+		&_bot {
+			-webkit-transform-origin: left bottom;
+			-ms-transform-origin: left bottom;
+			transform-origin: left bottom;
+			-webkit-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+	}//.ellipsis__point
+
+
+}//.side-open
+
+
+
+
+
+
+
+
