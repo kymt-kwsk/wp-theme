@@ -1,0 +1,77 @@
+@charset "utf-8";
+/*
+Theme Name: Basic 201805
+*/
+
+/** Initialize
+-------------------------*/
+@import "compass/css3";
+
+@import "variables";
+
+@import "mixins";
+
+/** Reset
+-------------------------*/
+@import "reset.scss";
+
+/** Common
+-------------------------*/
+@import "common/basic.scss";
+
+@import "common/header.scss";
+
+@import "common/footer.scss";
+
+@import "common/drawer.scss";
+
+@import "common/nav.scss";
+
+@import "common/main.scss";
+
+/** Components
+-------------------------*/
+@import "object/component/btn.scss";
+
+@import "object/component/label.scss";
+
+@import "object/component/tables.scss";
+
+@import "object/component/form.scss";
+
+@import "object/component/pagination.scss";
+
+//@import "object/component/flex.scss";
+
+@import "object/component/list.scss";
+
+@import "object/component/map.scss";
+
+/** Project
+-------------------------*/
+@import "object/project/frontpage.scss";
+
+@import "object/project/article.scss";
+
+@import "object/project/slider.scss";
+
+//	@import "object/project/animate.scss";
+
+//	@import "object/project/parallax.scss";
+
+/* Only warehouse */
+
+@import "object/project/tanifuji/page.scss";
+
+@import "object/project/tanifuji/other.scss";
+
+/** Utility
+-------------------------*/
+@import "object/utility/color.scss";
+
+@import "object/utility/typography.scss";
+
+@import "object/utility/clearance.scss";
+
+@import "object/utility/other.scss";
+
