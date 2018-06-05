@@ -1,0 +1,163 @@
+//== FrontPage
+
+/*	Front Page	*/
+/*-------------------------*/
+
+/* Jumbotron (Front Header) */
+
+.front-header {
+
+		margin: 0 !important;
+
+	.slider__dots_1 {
+		bottom: 30px;
+	}
+}
+
+
+/* Title */
+.home-section__ttl {
+	font-size: 1.875em;
+	text-align: center;
+	padding: 2px 0;
+	margin-bottom: .5em;
+
+	@include mq(lg) {
+		font-size: 2.5em;
+	}
+
+	&.ttl_bordered {
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: $primary_color;
+	}
+
+}//.home-section-ttl
+
+.home-section__sub-ttl {
+	font-size: 1.25em;
+	font-weight: $font-weight-bold;
+}
+/* Card */
+
+.cards_home {
+	
+	&.row {
+		@include mq {
+			margin-right: -1px;
+			margin-left: -1px;
+		}
+	}
+	.card__item {
+		margin-bottom: 3em;
+		margin-right: auto;
+		margin-left: auto;
+		max-width: 600px;
+
+		@include mq {
+			margin-bottom: 2.5em;
+			padding-right: 1px;
+			padding-left: 1px;	
+
+			.card-item__txt {
+				max-width: 90%;
+				margin-right: auto;
+				margin-left: auto;
+			}
+		}
+	}
+}//.home-card-block
+
+/* Latest Article */
+
+.latest-post {
+	padding-bottom: .5em;
+	margin-bottom: .5em;
+	border-bottom: 1px dotted $gray_light;
+	line-height: 1.5;
+
+	@include mq {
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+	}
+
+	@include mq(lg) {
+		&:first-child {
+			padding-top: 1em;
+            border-top: 1px dotted $gray_light;
+		}
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	.latest-post__meta {
+		float: left;
+		width: 5em;
+
+		@include mq(xs) {
+			width: 6em;
+		}
+/*
+		a.cat-label {
+			display: block;
+			width: 6em;
+			padding: .1em .1em .1em 0;
+			margin-bottom: 0;
+			font-size: .875em;
+			font-weight: $font-weight-bold;
+			color: $secondary_color;
+			background: lighten($primary_color , 33%);
+			text-align:center;
+			@include border-radius( 3px );
+		}
+*/
+	}
+
+	.latest-post__ttl {
+		overflow: hidden;
+		font-size: 1em;
+		padding: 0 0 .1em 1em;
+ 		text-align: left;
+
+		a {
+			color: $body_color;
+
+			&:hover{
+				color: $link_color;
+				text-decoration: underline;
+			}
+		}
+
+		@include mq {
+			float: left;
+		}
+	}
+
+	.latest-post__date {
+		font-size: .9375em;
+	}
+}//.latest-post
+
+
+/* No Image */
+/*-------------------------*/
+
+.noimg-txt {
+	width: 100%;
+	height: 100%;
+	background: $gray_ex_lighter;
+	position: relative;
+	text-align: center;
+
+	span {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	  -webkit-transform: translate(-50%, -50%);
+	  -ms-transform: translate(-50%, -50%);
+	  transform: translate(-50%, -50%);	
+		color: $gray_lighter;
+	}
+}

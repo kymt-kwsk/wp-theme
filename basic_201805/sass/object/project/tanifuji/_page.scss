@@ -1,0 +1,144 @@
+//== Pages
+
+/*--- Company --*/
+table.comp-tbl {
+	
+	tbody {
+
+		th,td {
+			padding-top: .625em;
+			padding-bottom: .625em;
+			border-color: $table_border_light_color !important;
+		}
+
+		th {
+			font-weight: $font-weight-bold !important;
+			width: 12em;
+			background: $bg_light_color;
+		}
+	}
+}
+
+table.history-tbl {
+
+	th {
+		white-space: nowrap;
+
+		span {
+			font-size: .875em;
+			font-weight: normal;
+		}
+	}
+}
+
+/*--- Recruit --*/
+#recruit-archive-wrapper {
+
+	li.recruit-card {
+
+		padding: 2.5em	0px 2em;
+		margin-bottom: 3em;
+		position: relative;
+
+		@include mq {
+			padding: 2.5em	30px 2em;
+			border: .5em solid $gray_ex_light; 
+		}
+
+		@include mq(lg) {
+			padding: 2.5em	60px 2em;
+			border-width: 1em;
+		}
+
+		h3{
+			margin-bottom: 1.25em;
+			position: relative;
+			padding-left: 2.75em;
+			font-weight: $font-weight-bold;
+
+			.num {
+				position: absolute;
+				top: -0.25em;
+				left: 0;
+				display: block;
+				width: 1.75em;
+				height: 1.75em;
+				line-height: 1;
+				font-family: $font_family_en;
+				font-size: 1.25em;
+//				font-weight: $font-weight-bold;
+				font-weight: 700;
+				padding-top: .375em;
+				background: $info_color;
+				color: $white;
+				text-align: center;
+				@include border-radius (50%);
+			}
+		}
+
+	}
+}//#recruit-archive-wrapper
+
+table.recruit-tbl {
+
+	&.table-bordered {
+		th,td {
+			border-color: $table_border_light_color;
+		}
+	}
+
+	th {
+		background: $gray_ex_lighter;
+		width: 6em;
+
+		@include mq(md){
+			width: 8em;
+			text-align: right;
+
+		}
+	}
+
+	td {
+		background-color: $white;
+	}
+}
+
+/*--- Lanch --*/
+#ranch-cattle {
+	.card {
+		margin-bottom: 2em;
+		@include mq {
+			margin-bottom: 0;
+		}
+	}
+}
+
+/*--- Waichi --*/
+.warranty-body {
+	position: relative;
+
+	& > div {
+
+		text-align: center;
+
+		@include mq {
+			position: absolute;
+			right: 15px;
+			top: 50%;
+			@include transform( translateY( -50% ));
+			text-align: right;
+		}
+		@include mq(md) {
+			right: 60px;
+		}
+	}
+}//.warranty-body
+
+.waichi-warranty {
+
+	text-align: center;
+
+	@include mq {
+		max-width: 360px;
+	}
+}

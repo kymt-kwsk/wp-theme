@@ -1,0 +1,25 @@
+//-- List
+
+/*	List */
+/*-------------------------*/
+
+.list_unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list_inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list_inline > li,
+.list_inline__item {
+  display: inline-block;
+}
+
+.list_inline > li:not(:last-child)
+.list_inline__item:not(:last-child) {
+  margin-right: 5px;
+}
+

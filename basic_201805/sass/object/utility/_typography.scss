@@ -1,0 +1,85 @@
+//== Typography  */
+
+/*	Font Color */
+/*-------------------------*/
+.serif,
+.font-serif {
+	font-family: $font_family_serif !important;
+}
+.font-rounded {
+	font-family: $font_family_rounded !important;
+}
+
+/*	Font Size */
+.text-xxs {
+  font-size: 60% !important;
+}
+.text-xs {
+  font-size: 75% !important;
+}
+.text-sm {
+  font-size: 90% !important;
+}
+.text-nm {
+	font-size: 100% !important;
+}
+.text-md {
+  font-size: 115% !important;
+}
+.text-lg {
+  font-size: 130% !important;
+}
+.text-xl {
+  font-size: 140% !important;
+}
+.text-xxl {
+  font-size: 160% !important;
+}
+.text-big {
+  font-size: 200% !important;
+}
+.text-normal {
+  font-weight: 400 !important;
+}
+.text-bold {
+  font-weight: $font-weight-bold !important;
+}
+.text-bolder {
+  font-weight: 700 !important;
+}
+
+/*	Text Align */
+/*-------------------------*/
+.text-center {
+	text-align: center !important;
+}
+.text-left {
+	text-align: left !important;
+}
+.text-right {
+	text-align: right !important;
+}
+.text-justify,
+.text-justify p {
+	text-align: justify;
+	text-justify: inter-ideograph;
+	text-justify: newspaper;
+}
+.text-indent,
+.text-indent p {
+	text-indent: 1em;
+}
+.text-deny {
+	text-decoration: line-through;
+}
+@include mq('xs','max',true) {
+	.sp-text-left {
+		text-align: left !important;
+	}
+	.sp-text-right {
+		text-align: right !important;
+	}
+	.sp-text-center {
+		text-align: center !important;
+	}
+}

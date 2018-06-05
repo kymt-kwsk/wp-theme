@@ -1,0 +1,52 @@
+//== Animate
+
+/*	Inview Animate	*/
+/*-------------------------*/
+
+ /*----- フェードイン -----*/
+    .js__inviewfadeIn {
+        opacity: 0;
+        transition: 1.2s;
+    }
+    
+    .fadeIn {
+        opacity: 1.0;
+    }
+
+    /*----- 上へスライド -----*/
+    .js__inviewUp {
+        transform: translate(0, 40px);
+        -webkit-transform: translate(0, 40px);
+        transition: .8s;
+    }
+    
+    .Up {
+        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+    }
+
+    /*----- ズームイン -----*/
+    .js__inviewzoomIn {
+        transform: scale(0, 0);
+        -webkit-transform: scale(0, 0);
+        transition: .6s;
+    }
+    
+    .zoomIn {
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+    } 
+    
+    /*----- フェードインしながら上へスライド -----*/
+    .js__inviewfadeInUp {
+        opacity: 0;
+        transform: translate(0, 100px);
+        -webkit-transform: translate(0, 100px);
+        transition: 2.4s;
+    }
+    
+    .fadeInUp {
+        opacity: 1.0;
+        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+    }

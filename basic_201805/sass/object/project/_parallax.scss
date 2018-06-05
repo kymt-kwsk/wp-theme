@@ -1,0 +1,31 @@
+//== Parallax
+
+/*	Parallax	*/
+/*-------------------------*/
+
+.parallax {
+	position: relative;
+  margin: 0 auto;
+  padding: 0;
+	background: #000 url(../images/feature_bg1.jpg) no-repeat;
+	background-position: 50% -200px;
+	background-size: auto 1000px;
+	background-attachment: fixed;
+
+	@include mq {
+		background-position: 50% -200px;
+		background-size: cover;
+	}
+
+}
+.parallax__inner {
+	position: relative;
+  padding: 0 15px;
+  width: 100%;
+	text-align: center;
+	@include background(linear-gradient(to bottom, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 30%));
+}
+.parallax__inner,
+.parallax__inner h2 {
+	color: $white;
+}

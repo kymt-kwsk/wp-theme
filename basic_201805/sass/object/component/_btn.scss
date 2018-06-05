@@ -1,0 +1,184 @@
+//== Button
+
+/*	Button	*/
+/*-------------------------*/
+
+.btn {
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none !important;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 2px solid transparent;
+  padding: 0.5em 0.75em;
+  font-size: 1em;
+  line-height: 1;
+  @include border-radius( 4px );
+  @include transition(all 0.15s ease);
+	cursor: pointer;
+
+	&:focus,
+	&:active,
+	&:hover {
+		outline: 0;
+  	@include box-shadow(0 0 0 3px rgba(0, 123, 255, 0.25));
+
+		img {
+			@include opacity( 1 );
+		}
+	}
+
+	&.btn_xs {
+		font-size: .75em;
+		padding: .125em .25em; 
+	  @include border-radius( 2px );
+	}
+
+	&.btn_sm {
+		font-size: .875em;
+		padding: .25em .5em; 
+	  @include border-radius( 4px );
+	}
+
+	&.btn_md {
+		font-size: 1.0625em;
+		padding: .625em 1.25em;
+	}
+
+	&.btn_lg {
+		font-size: 1.125em;
+		padding: .75em 2em;
+	}
+
+	&.btn_xl {
+		font-size: 1.25em;
+		padding: 1em 3em;
+
+		@include mq(md) {
+			padding: 1em 4.5em !important;
+		}
+
+		&.btn_arrow:after {
+			right: 10px;
+		}
+	}
+
+	&.btn_default {
+		color: $body_color;
+		background-color: $white;
+	  border-color: $gray;
+
+		&:hover {
+			color: $white;
+			background-color: $primary_color;
+			border-color: $primary_color;
+
+			&:after { // For .btn_arrow
+				border-right-color: $white;
+				border-bottom-color: $white;
+			}
+		}
+	}
+
+	&.btn_mono {
+		background: darken($gray_ex_lighter, 3%);
+		color: $body_color;
+
+		&:hover {
+  		background: darken($gray_ex_lighter, 10%);
+		}
+	}
+
+	&.btn_primary {
+  	background: $primary_color;
+		color: $white;
+
+		&:hover {
+  		background: $primary_color;
+		}
+	}
+
+	&.btn_primary-light {
+  	background: lighten($primary_color, 35%);
+		color: $body_color;
+
+		&:hover {
+  		background: lighten($primary_color, 20%);
+		}
+	}
+
+	&.btn_secondary {
+  	background: $secondary_color;
+		color: $white;
+
+		&:hover {
+  		background: lighten($secondary_color, 10%);
+		}
+	}
+
+	&.btn_info {
+  	background: $info_color;
+		color: $white;
+
+		&:hover {
+  		background: darken($info_color, 10%);
+		}
+	}
+
+	&.btn_success {
+  	background: $success_color;
+		color: $white;
+
+		&:hover {
+  		background: darken($success_color, 10%);
+		}
+	}
+
+	&.btn_arrow {
+		position: relative;
+		padding-left: 1.25em;
+		padding-right: 1.5625em;
+
+		&:after {
+			content: "\e902";
+			display: block;
+			width: 16px;
+			height: 16px;
+			position: absolute;
+			top: 50%;
+			right: 1px;
+			margin-top: -8px;
+			font-family: 'icomoon';
+			font-weight: normal;
+			@include opacity( 0.6 );
+		}
+	}
+
+	&.btn_icon {
+
+		i {
+			position: relative;
+			top: 1px;
+			padding-right: .75em;
+		}
+	}
+
+	&.category-btn {
+		margin-right: .25em;
+		padding: .75em 1.25em !important;
+	}
+
+
+	&.btn_block {
+	  display: block !important;
+
+	}
+}//.btn
+
+
+

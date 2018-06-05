@@ -1,0 +1,259 @@
+//
+// Tables
+// --------------------------------------------------
+
+
+table {
+  background-color: $table_bg;
+}
+caption {
+  padding-top: $table_cell_padding;
+  padding-bottom: $table_cell_padding;
+  text-align: left;
+}
+th {
+  text-align: left;
+	font-weight: normal;
+}
+
+
+// Baseline styles
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: $line_height_pc;
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: $table_cell_padding;
+        line-height: $line_height_base;
+        vertical-align: top;
+        border-top: 1px solid $table_border_color;
+      }
+// add Table bottom border(2017.09)
+			&:last-child {
+	      > th,
+	      > td {
+					border-bottom: 1px solid $table_border_color;
+				}
+			}
+// End add Table bottom border
+    }
+  }
+  // Bottom align for column headings
+  > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid $table_border_color;
+  }
+  // Remove top border from thead by default
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+  // Account for multiple tbody instances
+  > tbody + tbody {
+    border-top: 2px solid $table_border_color;
+  }
+
+  // Nesting
+  .table {
+    background-color: $body_bg;
+  }
+}
+
+
+// Condensed table w/ half padding
+
+.table_condensed {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: $table_condensed_cell_padding;
+      }
+    }
+  }
+}
+
+
+// Bordered version
+//
+// Add borders all around the table and between all the columns.
+
+.table_bordered {
+  border: 1px solid $table_border_color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid $table_border_color;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+
+// Zebra-striping
+
+.table_striped {
+  > tbody > tr:nth-of-type(odd) {
+    background-color: $table_bg_accent;
+  }
+}
+
+
+// Hover effect
+
+.table_hover {
+  > tbody > tr:hover {
+    background-color: $table_bg_hover;
+  }
+}
+
+
+// Table cell sizing
+//
+// Reset default table behavior
+
+table col[class*="col-"] {
+  position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
+  float: none;
+  display: table-column;
+}
+table {
+  td,
+  th {
+    &[class*="col-"] {
+      position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
+      float: none;
+      display: table-cell;
+    }
+  }
+}
+
+
+// Table backgrounds
+
+@include table-row-variant('active', $table_bg_active);
+
+
+// Responsive tables
+
+.table_responsive {
+  overflow-x: auto;
+  min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+
+  @include mq(xs, max, true) {
+    width: 100%;
+    margin-bottom: ($v_space * 0.75);
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid $table_border_color;
+
+    > .table {
+      margin-bottom: 0;
+
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    > .table_bordered {
+      border: 0;
+
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th:first-child,
+          > td:first-child {
+            border-left: 0;
+          }
+          > th:last-child,
+          > td:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      > tbody,
+      > tfoot {
+        > tr:last-child {
+          > th,
+          > td {
+            border-bottom: 0;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.table_borderless {
+	border: none !important;
+
+	th,td{
+		border: none !important;
+	}
+}
+/* Swichable Table */
+
+table.table_switchable {
+
+	@include mq(xs, max, true) {
+		display: block;
+		width: 100% !important;
+		border: none !important;
+
+		thead,tbody,tr,th,td {
+			display: block;
+			width: 100% !important;
+		}
+		td {
+			padding-bottom: 1.5em !important;
+		}
+		&.table_bordered {
+			th {
+				border-bottom: none;
+			}
+			td {
+				border-top: none;
+				border-bottom-width: 0;
+			}
+			&:last-child {
+				border-bottom-width: 1px;
+			}
+		}
+	}
+}//.table_switchable
+
+

@@ -1,0 +1,34 @@
+
+/*	Text Color */
+/*-------------------------*/
+@each $name, $color in $colors {
+  .color-#{$name} {
+     color: $color !important;
+  }
+}
+@each $name, $light_color in $light_colors {
+  .color-#{$name}-light {
+     color: $light_color !important;
+  }
+}
+@each $name, $dark_color in $dark_colors {
+  .color-#{$name}-dark {
+     color: $dark_color !important;
+  }
+}
+
+/* Background color
+---------------------------------------*/
+//	@each $name, $bgcolor in $bgcolors {
+//		.bgcolor-#{$name} {
+//			background-color: $bgcolor !important;
+//		}
+//	}
+
+/* Border color
+---------------------------------------*/
+//	@each $name, $bordercolor in $bordercolors {
+//		.border-#{$name} {
+//			border-color: $bordercolor !important;
+//		}
+//	}

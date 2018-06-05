@@ -1,0 +1,120 @@
+//
+// Form
+// --------------------------------------------------
+
+/*	Form Parts	*/
+/*-------------------------*/
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="checkbox"],
+input[type="radio"],
+select,
+textarea {
+	border: 1px solid $gray_lighter;
+	padding: .25em .5em;
+	@include border-radius(4px);
+	background: $gray_ex_lighter;
+}
+textarea {
+	width: 100%;
+}
+
+/* Inquiry */
+.textbox_xs,
+.textbox_sm,
+.textbox_md,
+.textbox_lg,
+.textbox_xl {
+	width: 100%;
+}
+@include mq {
+	.textbox_xs {
+		width: 25%;
+	}
+	.textbox_sm {
+		width: 40%;
+	}
+	.textbox_md {
+		width: 50%;
+	}
+	.textbox_lg {
+		width: 75%;
+	}
+	.textbox_xl {
+		width: 95%;
+	}
+}
+
+/* Contact Form7 */
+table.wpcf-tbl {
+
+	tbody {
+		th {
+//			background: $bg_light_color;
+			background: lighten( $primary-color, 45%);
+			vertical-align: middle;
+		}
+
+		td {
+			background-color: $white;
+		}
+
+		th,td {
+			border-color: $table_border_color !important;
+		}
+
+		@include mq('xs', 'max' , 'true') {
+
+			tr,th,td {
+				display: block;
+			}
+	
+			th {
+				border-top-width: 0;
+				border-bottom-color: $table_border_color !important;
+			}
+
+			&:first-child tr th {
+				border-top-width: 1px;
+			}
+
+			td {
+				border-top-width: 0;
+				border-bottom-width: 0;
+			}
+		}
+	}
+}
+
+/* Really Simple CAPTCHA */
+#captcha-wrapper {
+	width: 290px;
+	margin: 0 auto 2em;
+	padding: 15px;
+	border: 1px solid #ddd;
+	background: #fff;
+	text-align: center;
+}
+#captcha-wrapper img {
+	margin-bottom: 10px;
+}
+#captcha-wrapper .wpcf7-form-control-wrap {
+	display: block;
+	padding-top: 10px;
+}
+
+/* Submit Button */
+.wpcf7-submit {
+	display: block;
+	width: 280px;
+	max-width: 100%;
+	margin-right: auto !important;
+	margin-left: auto !important;
+}

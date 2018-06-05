@@ -1,0 +1,163 @@
+//== Other
+
+/*	BG Color */
+/*-------------------------*/
+@each $name, $ex_light_color in $ex_light_colors {
+  .bg-light-#{$name} {
+     background-color: $ex_light_color !important;
+  }
+}
+
+.bg-colored {
+	background-color: $gray_ex_lighter;
+}
+
+/********************************************************/
+/*	WP Helper	(float by WP Editor) */
+/********************************************************/
+
+.alignleft,
+div .alignleft,
+.alignright,
+div .alignright,
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+	padding-bottom: $v_space * 1.4;
+}
+
+@include mq() {
+	.alignleft,
+	img.alignleft {
+		display: inline;
+		float: left;
+		margin-right: $h_space * 1.6 !important;
+		margin-top: .25em;
+		margin-bottom: 1em;
+	}
+	.alignright,
+	img.alignright {
+		display: inline;
+		float: right;
+		margin-left: $h_space * 1.6 !important;
+		margin-top: .25em;
+		margin-bottom: 1em;
+	}
+	.aligncenter,
+	img.aligncenter {
+		clear: both;
+		margin-bottom: 1em;
+	}
+
+}
+/********************************************************/
+/*	Bootstrap Helper  */
+/********************************************************/
+.visible-sp {
+	@include mq('xs') {
+		display: none;
+	}
+}
+.visible-mob {
+	@include mq('sm') {
+		display: none;
+	}
+}
+
+/********************************************************/
+/*	Telephone Link  */
+/********************************************************/
+a.tel-link {
+	cursor: default;
+	text-decoration: none;
+}
+
+.phone-block {
+	max-width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+
+	@include mq {
+		text-align: left;
+	}
+
+	.tel-label {
+		background: $gray_dark;
+		color: $white;
+    padding: .5em ;
+		font-weight: $font_weight_bold;
+		line-height: 1.5em;
+		margin-bottom: 1em;
+
+		@include mq {
+			margin-bottom: 0;
+		}
+
+		.inner {
+			margin: 0 auto;
+			width: 4.5em;
+			text-align: justify;
+			text-align-last: justify;
+			-moz-text-align-last: justify;
+		}
+	}
+
+	.phone-number {
+		display: inline-block;
+		font-size: 2em;
+		font-weight: 500;
+		font-family: $font_family_en;
+		color: $gray_dark;
+		line-height: 1em;
+
+		@include mq {
+			font-size: 3em;
+			font-weight: 700;
+		}
+
+		i {
+			margin-right: .25em;
+			position: relative;
+			top: .06025em;
+		}
+	}
+}
+
+/********************************************************/
+/*	Position  */
+/********************************************************/
+.vertical-middle,
+[class^="vertical-middle"],
+[class*=" vertical-middle"]{
+	@include yPos-middle();
+}
+.vertical-middle {
+	&_sm {
+		@include mq(sm,max,true) {
+			position: static;
+			top: 0;
+			@include transform(translateY(0));
+		}
+	}
+	&_md {
+		@include mq(md,max,true) {
+			position: static;
+			top: 0;
+			@include transform(translateY(0));
+		}
+	}
+	&_lg {
+		@include mq(lg,max,true) {
+			position: static;
+			top: 0;
+			@include transform(translateY(0));
+		}
+	}
+}

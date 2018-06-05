@@ -1,0 +1,66 @@
+//== Other
+
+.closely-row {
+
+		> * {
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+	}
+}
+ /********************************************************/
+/* BG */
+/********************************************************/
+.bg-bordered {
+	background-color: #fef6d0;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.25, #fff), color-stop(.25, transparent), color-stop(.50, transparent), color-stop(.50, #fff), color-stop(.75, #fff), color-stop(.75, transparent), to(transparent));
+  background-image: -moz-linear-gradient(#fff 25%, transparent 25%, transparent 50%, #fff 50%, #fff 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(#fff 25%, transparent 25%, transparent 50%, #fff 50%, #fff 75%, transparent 75%, transparent);
+  background-image: linear-gradient(#fff 25%, transparent 25%, transparent 50%, #fff 50%, #fff 75%, transparent 75%, transparent);
+	@include background-size ( 4px 4px );
+}
+
+/********************************************************/
+/* SNS */
+/********************************************************/
+@include mq {
+	.sns-section.row {
+		margin-right: -36px;
+		margin-left: -36px;
+
+		.sns-wrapper {
+			padding-right: 36px;
+			padding-left: 36px;
+		}
+	}
+}
+
+#fb-page-wrapper {
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto !important;
+}
+#fb-page-wrapper {
+	min-height: 420px;
+}
+.fb-page{
+	width: 100% !important;
+}
+.sns-logo img {
+	max-width: 120px;
+	padding-bottom: .125em;
+}
+
+#twitter-wrapper {
+	max-width: 240px;
+	margin: 0 auto !important;
+
+		@include mq {
+			margin-left: 0 !important;
+		}
+}
+
+.insta-wrapper {
+	padding: 1em 0.5em;
+	background: $white;
+	@include border-radius(6px);
+}
