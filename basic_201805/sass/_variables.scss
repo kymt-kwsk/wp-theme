@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+// == Basic
+
+$container_width:	1170px;
+
+// == COLOR
+$black:					#000 !default;
+$white: 				#fff !default;
+$red:						#f00 !default;
+
+$gray-darker:		lighten($black, 13.5%) !default; // #222
+$gray-dark:			lighten($black, 27%) !default;   // #454545
+$gray:					lighten($black, 40%) !default; // #666
+$gray-light:		lighten($black, 60%) !default; // #8c8c8c
+$gray-lighter:	lighten($black, 73%) !default; // #bbb
+$gray-ex-light:		lighten($black, 87%) !default; //dedede
+$gray-ex-lighter:		lighten($black, 97.5%) !default;
+
+$primary_color:				#B28F57 !default;
+//$secondary_color:			#15509F !default;
+$secondary_color:			#604f3F !default;
+$info_color:					#42598f !default;
+$success_color:				#47ad38 !default;
+$warning_color:				#fccc42 !default;
+//$danger_color:				#dd2840 !default;
+$danger_color:				#587fcc !default;
+
+//	Text_color
+
+$body_color:				darken($gray, 5%);
+$ttl_color:					darken($body_color, 10%),;
+
+$link_color:				#0f68ab;
+$active_link_color:	lighten($info_color, 25%);
+
+//	bg_color
+
+$body_bg:           $white;
+
+$bg_primary_color: 	#E0AB48;
+
+$bg_light_color:		#F6F6F6;
+
+$bg_well_color:			lighten($bg_primary_color, 36%);
+
+
+//	Colors Variation
+$colors:(
+	primary: 		$primary_color,
+	secondary: 	$secondary_color,
+	info: 			$info_color,
+	success: 		$success_color,
+	warning: 		$warning_color,
+	danger: 		$danger_color,
+	link: 			$link_color,
+	ttl: 				$ttl_color,
+	red:				$red,
+	white:			$white,
+)	;
+$light_colors:(
+	default:		lighten($body_color, 25%),
+	primary:		lighten($primary_color, 25%),
+	secondary:	lighten($secondary_color, 25%),
+) ;
+$dark_colors:(
+	default: 		darken($body_color, 25%),
+	primary: 		darken($primary_color, 15%),
+	secondary: 	darken($secondary_color, 15%),
+) ;
+$ex_light_colors:(
+	default: 		$bg_light_color,
+	primary: 		lighten($primary_color, 45%),
+	secondary:	lighten($secondary_color, 45%),
+);
+
+
+
+//== Typography
+
+//	FONT 
+
+$font_family_sans:		"Noto Sans Japanese", "YuGo", "游ゴシック Medium", "Yu Gothic Medium", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro","メイリオ", Meiryo, Osaka, sans-serif !default;
+$font_family_serif:		"Lusitana", "Sawarabi Mincho", "游明朝", YuMincho, "ヒラギノ明朝 Pro W3" , "Hiragino Mincho ProN" , "Hiragino Mincho Pro" , "ＭＳ 明朝" ,"Noto Sans Japanese", serif !default;
+$font_family_rounded:	"Rounded Mplus 1c";
+$font_family_en:			"Poppins", sans-serif !default;
+$font_family_base:		$font_family_sans !default;
+$font-weight-bold: 		500;
+
+$fontsize_base:			14 !default;
+$pc_fontsize:				16 !default;
+
+$line_height_base:	1.5 !default;
+$line_height_pc:		1.8 !default;
+
+$font_size_h1:			28 !default;
+$font_size_h2:			24 !default;
+$font_size_h3:			20 !default;
+$font_size_h4:			18 !default;
+$font_size_h5:			16 !default;
+$font_size_h6:			14 !default;
+
+$heading_font_weight: normal !default;
+
+
+// == Margin / padding
+
+$spacer_height:			.625em !default;
+$h_space:						15px !default;
+$v_space:						1em !default;
+
+//== Tables
+
+$table_cell_padding:            .75em !default;
+$table_condensed_cell_padding:  5px !default;
+
+$table_bg:                      transparent !default;
+$table_bg_accent:               lighten($primary_color, 28%) !default;
+$table_bg_hover:                #f5f5f5 !default;
+$table_bg_active:               $table_bg_hover !default;
+
+$table_border_color:            $gray_lighter !default;
+$table_border_light_color:      lighten( $table_border_color, 10% ) !default;
+//$table_border_secondary_color:	desaturate(lighten($secondary_color, 10%), 35%);
+
+
+// == Media Query (Grid breakpoints)
+
+$grid-breakpoints: (
+  xs: 480px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1440px
+) !default;
+
